@@ -1,0 +1,52 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="PageMaitre.master.cs" Inherits="Partie_6_Master_Page.PageMaitre" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+    <style>
+        .center{
+            flex-grow:1;
+        }
+        .btn{
+            background-color:black;
+            color:white;
+            border:0px solid black;
+        }
+        footer{
+            background-color:black;
+            color:white;
+            text-align:center;
+        }
+        body{
+            height:100vh;
+        }
+    </style>
+<body>
+    <form id="form1" runat="server">
+        <header>
+            <asp:Image runat="server" ImageUrl="~/pictures/MyImage.png" />
+        </header>
+ <div style="display:flex;background-color:black;padding:10px;">
+            <asp:Button runat="server" ID="Acceil" Text="Acceil" CssClass="center btn" OnClick="Acceil_Click"/>
+            <asp:Button runat="server" ID="Profil" Text="Profil" CssClass="center btn" OnClick="Profil_Click"/>
+            <asp:Button runat="server" ID="Contact" Text="Contact" CssClass="center btn" OnClick="Contact_Click"/>
+       <asp:DropDownList ID="DropDownList1" runat="server" CssClass="center">
+            <asp:ListItem>Ete</asp:ListItem>
+            <asp:ListItem Value="Hiver"></asp:ListItem>
+            <asp:ListItem>Printemps</asp:ListItem>
+            <asp:ListItem>Automne</asp:ListItem>
+        </asp:DropDownList>
+     </div>
+       <section style="width:100%;height:100%;display:flex;justify-content:center;align-items:center;">
+        <asp:ContentPlaceHolder ID="MainContentPlaceHolder" runat="server">
+        </asp:ContentPlaceHolder>
+       </section>
+        <footer>Copyright TDI201B ISGI Boutissante Issam</footer>
+    </form>
+</body>
+</html>
